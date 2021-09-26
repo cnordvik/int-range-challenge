@@ -13,7 +13,7 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        val utilRanges = UtilRanges()
+        var utilRanges = UtilRanges()
         var inclusiveRange: MutableSet<IntRange> = mutableSetOf(5..13, 2..8) // define any range here
         var exclusiveRange: MutableSet<IntRange> = mutableSetOf(4..10, 5..11) // define any range here
         var validRanges = utilRanges.getValidRanges(inclusiveRange, exclusiveRange)
@@ -24,6 +24,7 @@ class ExampleUnitTest {
         assertEquals(12, validRanges.last().first)
         assertEquals(13, validRanges.last().last)
 
+        utilRanges = UtilRanges()
         inclusiveRange = mutableSetOf(5..20, 2..40) // define any range here
         exclusiveRange = mutableSetOf(1..10) // define any range here
         validRanges = utilRanges.getValidRanges(inclusiveRange, exclusiveRange)
